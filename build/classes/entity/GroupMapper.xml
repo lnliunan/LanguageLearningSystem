@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD 
+ Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace实际上接口的名字 -->
+<mapper namespace="mapper.GroupMapper">
+
+	<select id="getPersonalGroups" resultType="LearningGroup"
+		parameterType="int">
+		select * from learning_group where creator=#{creator}
+	</select>
+
+	<insert id="addLearningGroup" parameterType="LearningGroup">
+		insert into
+		learning_group
+		values(null,#{name},#{creator})
+	</insert>
+
+	<select id="getLearningGroupById" resultType="LearningGroup"
+		parameterType="int">
+		select * from learning_group where id=#{id}
+	</select>
+
+	<update id="updateLearningGroup" parameterType="LearningGroup">
+		update learning_group
+		set name = #{name}
+		where id=#{id}
+	</update>
+
+</mapper>

@@ -1,0 +1,11 @@
+eclipse.preferences.version=1
+encoding//WebContent/WEB-INF/views/Home/Home.jsp=UTF-8
+encoding//src/action/GroupAction.java=UTF-8
+encoding//src/action/StudentAction.java=UTF-8
+encoding//src/action/TopicAction.java=UTF-8
+encoding//src/action/UserAction.java=UTF-8
+encoding//src/service/ArticleService.java=UTF-8
+encoding//src/service/GroupService.java=UTF-8
+encoding//src/service/TopicService.java=UTF-8
+encoding//src/service/UserService.java=UTF-8
+encoding/<project>=UTF-8

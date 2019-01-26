@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD 
+ Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace实际上接口的名字 -->
+<mapper namespace="mapper.TopicMapper">
+
+	<select id="getAllTopic" resultType="Topic"
+		resultMap="TopicResult">
+		select * from topic
+	</select>
+	<select id="getPersonalTopic"
+		resultMap="TopicResult">
+		select * from topic where topic_author=#{userId}
+	</select>
+	<resultMap type="Topic" id="TopicResult">
+		<id property="topicId" column="id" />
+		<result property="topicTitle" column="topic_title" />
+		<result property="topicAuthor" column="topic_author" />
+		<result property="topicContent" column="topic_content" />
+		<result property="topicDate" column="topic_date" />
+	</resultMap>
+	<!-- resultType表示结果集中一行对应的类型 <select id="getStudents" resultType="Student"> 
+		select * from student </select> <insert id="addStudent" parameterType="Student"> 
+		insert into student values(#{id},#{name},#{age},#{photoPath}) </insert> <delete 
+		id="delete"> delete from student where id=#{id} </delete> <update id="updateStudent" 
+		parameterType="Student"> update student set name = #{name},age=#{age} where 
+		id=#{id} </update> -->
+
+</mapper>

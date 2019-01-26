@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD 
+ Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace实际上接口的名字 -->
+<mapper namespace="mapper.UserMapper">
+
+	<select id="getUser" resultType="User">
+		select * from user where username = #{username}
+	</select>
+
+	<insert id="addUser" parameterType="User">
+		insert into user
+		values(null,#{username},#{password},#{email},#{telephone},#{permission})
+	</insert>
+	
+	<select id="getUserById" resultMap="UserResult">
+		select * from user where id = #{articleAuthorId}
+	</select>
+	
+	<select id="getAllAdmin" resultMap="UserResult">
+		select * from user where permission=3
+	</select>
+	
+	<delete id="deleteUser" parameterType="int">
+		delete from user where id=#{id}
+	</delete>
+
+   <resultMap type="User" id="UserResult">
+   		<id property="id" column="id"/>
+   		<result property="username" column="username"/>
+   		<result property="password" column="password"/>
+   		<result property="email" column="email"/>
+   		<result property="telephone" column="telephone" />
+   		<result property="permission" column="permission" />
+   </resultMap>
+	<!-- resultType表示结果集中一行对应的类型 <select id="getStudents" resultType="Student"> 
+		select * from student </select> <delete id="delete"> delete from student 
+		where id=#{id} </delete> <update id="updateStudent" parameterType="Student"> 
+		update student set name = #{name},age=#{age} where id=#{id} </update> -->
+
+</mapper>

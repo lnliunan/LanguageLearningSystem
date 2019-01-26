@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- 在映射文件件中可以直接使用Course表示entity.Course -->
+	<typeAliases>
+		<typeAlias type="entity.Student" alias="Student" />
+		<typeAlias type="entity.User" alias="User" />
+		<typeAlias type="entity.Topic" alias="Topic" />
+		<typeAlias type="entity.Article" alias="Article" />
+		<typeAlias type="entity.LearningGroup" alias="LearningGroup" />
+	</typeAliases>
+
+
+	<mappers>
+		<mapper resource="entity/StudentMapper.xml" />
+		<mapper resource="entity/UserMapper.xml" />
+		<mapper resource="entity/TopicMapper.xml" />
+		<mapper resource="entity/ArticleMapper.xml" />
+		<mapper resource="entity/GroupMapper.xml" />
+	</mappers>
+
+</configuration>
